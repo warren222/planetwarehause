@@ -140,7 +140,7 @@ SELECT @wseen"
         End Select
     End Sub
 
-    Private Sub search_Click(sender As Object, e As EventArgs) Handles searchBTN.Click, nfcPNL.Click, handletile.Click
+    Private Sub search_Click(sender As Object, e As EventArgs) Handles searchBTN.Click, nfcPNL.Click, handletile.Click, accountstile.Click
         Select Case sender.name
             Case "searchBTN"
                 starter("LOAD CONTRACTS")
@@ -154,6 +154,11 @@ SELECT @wseen"
                     Form1.Dispose()
                 End If
                 Form1.Show()
+            Case "accountstile"
+                If Application.OpenForms.OfType(Of FRMaccount).Any Then
+                    FRMaccount.Dispose()
+                End If
+                FRMaccount.Show()
         End Select
     End Sub
 

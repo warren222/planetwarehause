@@ -41,6 +41,7 @@ Partial Class KMDIprojectFRM
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.nicknamelabel = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.accountstile = New MetroFramework.Controls.MetroTile()
         Me.Panel1.SuspendLayout()
         CType(Me.GV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pPNL.SuspendLayout()
@@ -214,6 +215,7 @@ Partial Class KMDIprojectFRM
         Me.FlowLayoutPanel1.Controls.Add(Me.homePNL)
         Me.FlowLayoutPanel1.Controls.Add(Me.nfcPNL)
         Me.FlowLayoutPanel1.Controls.Add(Me.handletile)
+        Me.FlowLayoutPanel1.Controls.Add(Me.accountstile)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 40)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -314,6 +316,22 @@ Partial Class KMDIprojectFRM
         Me.nicknamelabel.TabIndex = 852
         Me.nicknamelabel.Values.Text = "nickname"
         '
+        'accountstile
+        '
+        Me.accountstile.ActiveControl = Nothing
+        Me.accountstile.BackColor = System.Drawing.Color.Maroon
+        Me.accountstile.Location = New System.Drawing.Point(3, 234)
+        Me.accountstile.Name = "accountstile"
+        Me.accountstile.Size = New System.Drawing.Size(109, 71)
+        Me.accountstile.Style = MetroFramework.MetroColorStyle.Red
+        Me.accountstile.TabIndex = 6
+        Me.accountstile.Text = "Accounts"
+        Me.accountstile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.accountstile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.accountstile.UseCustomBackColor = True
+        Me.accountstile.UseSelectable = True
+        Me.accountstile.UseTileImage = True
+        '
         'KMDIprojectFRM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -360,4 +378,5 @@ Partial Class KMDIprojectFRM
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents nicknamelabel As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents handletile As MetroFramework.Controls.MetroTile
+    Friend WithEvents accountstile As MetroFramework.Controls.MetroTile
 End Class

@@ -17,8 +17,7 @@ Public Class loginFRM
         ElseIf RadioButton2.Checked Then
             KMDISystemsConnectionType = "121.58.229.248,49107"
         End If
-        MsgBox(KMDISystemsConnectionType)
-        MsgBox(sql.sqlconstr2)
+
         Select Case login()
                 Case "1"
                     If Application.OpenForms.OfType(Of KMDIprojectFRM).Any Then

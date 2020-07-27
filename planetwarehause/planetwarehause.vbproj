@@ -122,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\connection.vb" />
+    <Compile Include="forms\FRMaccount.Designer.vb">
+      <DependentUpon>FRMaccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FRMaccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Inventory\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -177,6 +183,9 @@
     <Compile Include="sql.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="forms\FRMaccount.resx">
+      <DependentUpon>FRMaccount.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Inventory\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
