@@ -24,6 +24,17 @@ Public Class KMDIprojectFRM
             wait(1)
             starter("NOTI")
         End If
+
+        Select Case user_accounttype
+            Case "Admin"
+                nfcPNL.Visible = True
+                handletile.Visible = True
+                accountstile.Visible = True
+            Case "NFC"
+                nfcPNL.Visible = True
+            Case "Inventory"
+                handletile.Visible = True
+        End Select
     End Sub
     Private Sub wait(ByVal seconds As Integer)
         For i As Integer = 0 To seconds * 100
@@ -140,7 +151,7 @@ SELECT @wseen"
         End Select
     End Sub
 
-    Private Sub search_Click(sender As Object, e As EventArgs) Handles searchBTN.Click, nfcPNL.Click, handletile.Click, accountstile.Click
+    Private Sub search_Click(sender As Object, e As EventArgs) Handles searchBTN.Click, nfcPNL.Click, handletile.Click, accountstile.Click, changepasstile.Click
         Select Case sender.name
             Case "searchBTN"
                 starter("LOAD CONTRACTS")
@@ -156,9 +167,14 @@ SELECT @wseen"
                 Form1.Show()
             Case "accountstile"
                 If Application.OpenForms.OfType(Of FRMaccount).Any Then
-                    FRMaccount.Dispose()
-                End If
+                        FRMaccount.Dispose()
+                    End If
                 FRMaccount.Show()
+            Case "changepasstile"
+                If Application.OpenForms.OfType(Of FRMchangepassword).Any Then
+                    FRMchangepassword.Dispose()
+                End If
+                FRMchangepassword.Show()
         End Select
     End Sub
 
@@ -196,5 +212,9 @@ SELECT @wseen"
 
     Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Application.Exit()
     End Sub
 End Class

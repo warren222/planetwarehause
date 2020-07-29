@@ -31,8 +31,10 @@ Public Class loginFRM
     End Sub
     Private Function login() As String
         Dim rc As String = "0"
-        Dim str As String = "select count(id),NICKNAME from account_tb where username = '" & _user & "' and password = '" & _pass & "' group by nickname"
-        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlconstr2)
+        Dim str As String = "
+declare @countid as integer = (select count(id) from [WAREHOUSEaccounttb] where username = '" & _user & "' and password = '" & _pass & "')
+select  @countid,firstname,username,password,accttype,id from [WAREHOUSEaccounttb] where username = '" & _user & "' and password = '" & _pass & "'"
+        Using sqlcon As SqlConnection = New SqlConnection(sql.sqlconstr)
             Using sqlcmd As SqlCommand = New SqlCommand(str, sqlcon)
                 Try
                     sqlcon.Open()
@@ -40,6 +42,10 @@ Public Class loginFRM
                     While rd.Read
                         rc = rd(0).ToString
                         KMDIprojectFRM._nickname = rd(1).ToString
+                        user_accounttype = rd(4).ToString
+                        user_id = rd(5).ToString
+                        user_username = rd(2).ToString
+                        user_password = rd(3).ToString
                     End While
                     rd.Close()
                 Catch ex As Exception

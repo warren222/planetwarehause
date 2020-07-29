@@ -33,21 +33,23 @@ Partial Class KMDIprojectFRM
         Me.filterall = New MetroFramework.Controls.MetroTextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
+        Me.LoadingPBOX = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.homePNL = New MetroFramework.Controls.MetroTile()
         Me.nfcPNL = New MetroFramework.Controls.MetroTile()
         Me.handletile = New MetroFramework.Controls.MetroTile()
-        Me.LoadingPBOX = New System.Windows.Forms.PictureBox()
+        Me.accountstile = New MetroFramework.Controls.MetroTile()
+        Me.changepasstile = New MetroFramework.Controls.MetroTile()
         Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.nicknamelabel = New ComponentFactory.Krypton.Toolkit.KryptonLabel()
-        Me.accountstile = New MetroFramework.Controls.MetroTile()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.GV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pPNL.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.LoadingPBOX, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -188,6 +190,7 @@ Partial Class KMDIprojectFRM
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(178, Byte), Integer))
         Me.Panel2.Controls.Add(Me.KryptonLabel5)
+        Me.Panel2.Controls.Add(Me.LoadingPBOX)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
@@ -209,6 +212,18 @@ Partial Class KMDIprojectFRM
         Me.KryptonLabel5.TabIndex = 590
         Me.KryptonLabel5.Values.Text = "Project Table"
         '
+        'LoadingPBOX
+        '
+        Me.LoadingPBOX.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LoadingPBOX.Image = CType(resources.GetObject("LoadingPBOX.Image"), System.Drawing.Image)
+        Me.LoadingPBOX.Location = New System.Drawing.Point(691, -1)
+        Me.LoadingPBOX.Name = "LoadingPBOX"
+        Me.LoadingPBOX.Size = New System.Drawing.Size(74, 36)
+        Me.LoadingPBOX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LoadingPBOX.TabIndex = 850
+        Me.LoadingPBOX.TabStop = False
+        Me.LoadingPBOX.Visible = False
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke
@@ -216,6 +231,7 @@ Partial Class KMDIprojectFRM
         Me.FlowLayoutPanel1.Controls.Add(Me.nfcPNL)
         Me.FlowLayoutPanel1.Controls.Add(Me.handletile)
         Me.FlowLayoutPanel1.Controls.Add(Me.accountstile)
+        Me.FlowLayoutPanel1.Controls.Add(Me.changepasstile)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 40)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -253,6 +269,7 @@ Partial Class KMDIprojectFRM
         Me.nfcPNL.UseCustomBackColor = True
         Me.nfcPNL.UseSelectable = True
         Me.nfcPNL.UseTileImage = True
+        Me.nfcPNL.Visible = False
         '
         'handletile
         '
@@ -269,18 +286,40 @@ Partial Class KMDIprojectFRM
         Me.handletile.UseCustomBackColor = True
         Me.handletile.UseSelectable = True
         Me.handletile.UseTileImage = True
+        Me.handletile.Visible = False
         '
-        'LoadingPBOX
+        'accountstile
         '
-        Me.LoadingPBOX.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LoadingPBOX.Image = CType(resources.GetObject("LoadingPBOX.Image"), System.Drawing.Image)
-        Me.LoadingPBOX.Location = New System.Drawing.Point(833, 2)
-        Me.LoadingPBOX.Name = "LoadingPBOX"
-        Me.LoadingPBOX.Size = New System.Drawing.Size(74, 36)
-        Me.LoadingPBOX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LoadingPBOX.TabIndex = 850
-        Me.LoadingPBOX.TabStop = False
-        Me.LoadingPBOX.Visible = False
+        Me.accountstile.ActiveControl = Nothing
+        Me.accountstile.BackColor = System.Drawing.Color.Maroon
+        Me.accountstile.Location = New System.Drawing.Point(3, 234)
+        Me.accountstile.Name = "accountstile"
+        Me.accountstile.Size = New System.Drawing.Size(109, 71)
+        Me.accountstile.Style = MetroFramework.MetroColorStyle.Red
+        Me.accountstile.TabIndex = 6
+        Me.accountstile.Text = "Accounts"
+        Me.accountstile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.accountstile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.accountstile.UseCustomBackColor = True
+        Me.accountstile.UseSelectable = True
+        Me.accountstile.UseTileImage = True
+        Me.accountstile.Visible = False
+        '
+        'changepasstile
+        '
+        Me.changepasstile.ActiveControl = Nothing
+        Me.changepasstile.BackColor = System.Drawing.Color.Gray
+        Me.changepasstile.Location = New System.Drawing.Point(3, 311)
+        Me.changepasstile.Name = "changepasstile"
+        Me.changepasstile.Size = New System.Drawing.Size(109, 71)
+        Me.changepasstile.Style = MetroFramework.MetroColorStyle.Red
+        Me.changepasstile.TabIndex = 7
+        Me.changepasstile.Text = "Change " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "user/pass"
+        Me.changepasstile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.changepasstile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
+        Me.changepasstile.UseCustomBackColor = True
+        Me.changepasstile.UseSelectable = True
+        Me.changepasstile.UseTileImage = True
         '
         'KryptonLabel6
         '
@@ -307,7 +346,7 @@ Partial Class KMDIprojectFRM
         '
         Me.nicknamelabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.nicknamelabel.AutoSize = False
-        Me.nicknamelabel.Location = New System.Drawing.Point(507, 8)
+        Me.nicknamelabel.Location = New System.Drawing.Point(475, 8)
         Me.nicknamelabel.Name = "nicknamelabel"
         Me.nicknamelabel.Size = New System.Drawing.Size(327, 26)
         Me.nicknamelabel.StateCommon.ShortText.Color1 = System.Drawing.Color.Ivory
@@ -316,21 +355,18 @@ Partial Class KMDIprojectFRM
         Me.nicknamelabel.TabIndex = 852
         Me.nicknamelabel.Values.Text = "nickname"
         '
-        'accountstile
+        'LinkLabel1
         '
-        Me.accountstile.ActiveControl = Nothing
-        Me.accountstile.BackColor = System.Drawing.Color.Maroon
-        Me.accountstile.Location = New System.Drawing.Point(3, 234)
-        Me.accountstile.Name = "accountstile"
-        Me.accountstile.Size = New System.Drawing.Size(109, 71)
-        Me.accountstile.Style = MetroFramework.MetroColorStyle.Red
-        Me.accountstile.TabIndex = 6
-        Me.accountstile.Text = "Accounts"
-        Me.accountstile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.accountstile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular
-        Me.accountstile.UseCustomBackColor = True
-        Me.accountstile.UseSelectable = True
-        Me.accountstile.UseTileImage = True
+        Me.LinkLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.Red
+        Me.LinkLabel1.Location = New System.Drawing.Point(841, 13)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(66, 17)
+        Me.LinkLabel1.TabIndex = 853
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Log Out"
         '
         'KMDIprojectFRM
         '
@@ -338,11 +374,11 @@ Partial Class KMDIprojectFRM
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(93, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(910, 462)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.nicknamelabel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.KryptonLabel6)
-        Me.Controls.Add(Me.LoadingPBOX)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Name = "KMDIprojectFRM"
         Me.Padding = New System.Windows.Forms.Padding(0, 40, 0, 0)
@@ -353,8 +389,8 @@ Partial Class KMDIprojectFRM
         Me.pPNL.ResumeLayout(False)
         Me.pPNL.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
         CType(Me.LoadingPBOX, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -379,4 +415,6 @@ Partial Class KMDIprojectFRM
     Friend WithEvents nicknamelabel As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents handletile As MetroFramework.Controls.MetroTile
     Friend WithEvents accountstile As MetroFramework.Controls.MetroTile
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents changepasstile As MetroFramework.Controls.MetroTile
 End Class

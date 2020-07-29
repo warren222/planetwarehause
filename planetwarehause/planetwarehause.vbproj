@@ -128,6 +128,12 @@
     <Compile Include="forms\FRMaccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\FRMchangepassword.Designer.vb">
+      <DependentUpon>FRMchangepassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FRMchangepassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Inventory\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -185,6 +191,9 @@
   <ItemGroup>
     <EmbeddedResource Include="forms\FRMaccount.resx">
       <DependentUpon>FRMaccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FRMchangepassword.resx">
+      <DependentUpon>FRMchangepassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Inventory\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
